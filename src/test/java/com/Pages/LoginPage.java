@@ -23,4 +23,11 @@ public class LoginPage extends Helpers {
         loginPageObjects.signInButton.click();
         return new MyAccountPage(driver);
     }
+
+    public RegistrationPage enterEmailToRegister(String email) {
+        loginPageObjects.emailToRegister.sendKeys(email);
+        loginPageObjects.registerNewEmail.click();
+        return new RegistrationPage(driver);
+    }
+
 }
