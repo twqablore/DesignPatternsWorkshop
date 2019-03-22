@@ -14,4 +14,10 @@ public class LoginPageObjects {
     @FindBy(id = "SubmitLogin")
     public WebElement signInButton;
 
+    @FindBy(id = "email_create")
+    public WebElement emailToRegister;
+
+    @FindBy(id = "SubmitCreate")
+    public WebElement registerNewEmail;
+
 }
