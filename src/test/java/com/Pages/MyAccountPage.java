@@ -4,6 +4,7 @@ import com.Objects.MyAccountPageObjects;
 import com.Utils.Helpers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class MyAccountPage extends Helpers{
     private MyAccountPageObjects myAccountPageObjects;
@@ -17,6 +18,12 @@ public class MyAccountPage extends Helpers{
 
     public void validateMyAccoutPage() {
         waitForElement(myAccountPageObjects.signOutLink);
-        System.out.println("In My account Page");
+        System.out.println("In My account Page of Desktop");
+    }
+
+    public void validateMyAccoutPageForResponsive() {
+        waitForElement(myAccountPageObjects.signOutLink);
+        Assert.assertEquals(myAccountPageObjects.categoryLink.getText(),"CATEGORIES","View might not be responsive");
+        System.out.println("In My account Page of Mobile");
     }
 }

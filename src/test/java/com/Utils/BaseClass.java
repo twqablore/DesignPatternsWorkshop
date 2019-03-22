@@ -1,6 +1,7 @@
 package com.Utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,6 +14,7 @@ import static io.github.bonigarcia.wdm.DriverManagerType.PHANTOMJS;
 
 public class BaseClass {
     public WebDriver driver;
+    Dimension d;
     private String baseUrl = "http://automationpractice.com/index.php";
 
 
@@ -33,6 +35,13 @@ public class BaseClass {
         System.out.println("Setting up FireFox Browser");
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
+    }
+    private void getFireFoxMobileBrowser() {
+        System.out.println("Setting up FireFox Browser");
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+        d = new Dimension(464,836);  //iPhone 6 Plus
+        driver.manage().window().setSize(d);
     }
 
     private void getPhantomJsBrowser() {
