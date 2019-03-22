@@ -12,7 +12,7 @@ public class HomePage extends Helpers {
         super(driver);
         homePageObjects = new HomePageObjects();
         PageFactory.initElements(driver, homePageObjects);
-        waitForElement(homePageObjects.header);
+       // waitForElement(homePageObjects.header);
     }
     
     public LoginPage clickSignIn() {
