@@ -24,3 +24,5 @@ public class NewUser {
 //        this.additionalInfo = "hello hello";
     }
 }
+
+
