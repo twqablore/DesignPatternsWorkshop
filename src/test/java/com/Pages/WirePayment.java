@@ -1,23 +1,31 @@
 package com.Pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import com.Objects.PaymentPageObjects;;
+import com.Objects.PaymentPageObjects;
+import com.Objects.RegistrationPageObjects;
+import com.Utils.Helpers;
 
-public abstract class WirePayment implements PaymentMethod
+
+public abstract class WirePayment extends Helpers implements PaymentMethod
 {
-    PaymentPageObjects paymentpageobject = new PaymentPageObjects();
-
+		
+	PaymentPageObjects myPaymentPageobject = new PaymentPageObjects();
+	
 	 public WirePayment(WebDriver driver) {
-	        PageFactory.initElements(driver, paymentpageobject);
+		 super(driver);
+	        PageFactory.initElements(driver, myPaymentPageobject);
+	        
 	    }
 	
-//	 
-	public String confirmationPageMessage()
+	 
+	public String confirmationPageMessage(String message)
 	{
-		paymentpageobject.bankwire.click();
-		return "paid through bank wire";
+		 driver.getPageSource().contains("wire");
+		return "text";
+		
 		
 	}
 	

@@ -6,6 +6,7 @@ import com.Utils.Helpers;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class PaymentPage extends Helpers{
@@ -73,6 +74,21 @@ public class PaymentPage extends Helpers{
 		
 	}
 	
+    
+
+    public WebElement bankwireConfirmation() {
+    	WebElement bankwire=paymentPageObjects.bankwireconfirmation;
+      	 System.out.println("bank wire confirmation page");
+      	 return bankwire;
+		
+	}
+    
+    public WebElement chequeConfirmation() {
+    	WebElement cheque=paymentPageObjects.chequeconfirmation;
+    	return cheque;
+      	 
+		
+	}
     
     
 }

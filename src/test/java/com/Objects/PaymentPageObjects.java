@@ -10,7 +10,7 @@ public  class PaymentPageObjects {
 	@FindBy(partialLinkText ="Pay by bank wire")
 	 public WebElement bankwire;
 	
-	@FindBy(partialLinkText ="Pay by check ")
+	@FindBy(xpath  ="Pay by check")
 	 public WebElement cheque;
 	
 	@FindBy(partialLinkText ="I confirm my order")
@@ -42,6 +42,13 @@ public  class PaymentPageObjects {
 	@FindBy(partialLinkText = "Reorder")
 	public WebElement reorder;
 	
+	
+	@FindBy(xpath  ="//h3[contains (text(),'Bank-wire payment')]")
+	 public WebElement bankwireconfirmation;
+		
+	
+	@FindBy(partialLinkText ="cheque")
+	 public WebElement chequeconfirmation;
 	
 	
 	
